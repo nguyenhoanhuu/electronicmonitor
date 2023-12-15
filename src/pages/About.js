@@ -69,27 +69,64 @@ const About = () => {
     };
 
     // Đăng ký lắng nghe dữ liệu từ Firebase
-    subscribeToFirebase('AC Voltage (RMS) (Vac)');
-    subscribeToFirebase('DC Voltage (Vdc)');
-    subscribeToFirebase('AC Current (RMS) (Iac)');
-    subscribeToFirebase('DC Current (Idc)');
-    subscribeToFirebase('DC Power (Wdc)');
-    subscribeToFirebase('DC Accumulated Net Energy (Wh-dc)');
-    subscribeToFirebase('DC Accumulated Import Energy (Wh-dc)');
-    subscribeToFirebase('DC Accumulated Export Energy (Wh-dc)');
-    subscribeToFirebase('AC Real Power (Wac)');
-    subscribeToFirebase('AC Apparent Power (VAac)');
-    subscribeToFirebase('Power Factor (Pf)');
-    subscribeToFirebase('AC Accumulated Net Energy (Wh-ac)');
-    subscribeToFirebase('AC Accumulated Import Energy (Wh-ac)');
-    subscribeToFirebase('AC Accumulated Export Energy (Wh-ac)');
-    subscribeToFirebase('Frequency (Hz)');
+    subscribeToFirebase('Vac');
+    subscribeToFirebase('Vdc');
+    subscribeToFirebase('Iac');
+    subscribeToFirebase('Idc');
+    subscribeToFirebase('Wdc');
+    subscribeToFirebase('Wac');
+    subscribeToFirebase('Netdc');
+    subscribeToFirebase('Imdc');
+    subscribeToFirebase('Expdc');
+    subscribeToFirebase('Appac');
+    subscribeToFirebase('Factac');
+    subscribeToFirebase('Netac');
+    subscribeToFirebase('Imac');
+    subscribeToFirebase('Expac');
+    subscribeToFirebase('Fac');
 
     return () => {
       // Hủy đăng ký lắng nghe khi component unmount
       database.ref('/').off();
     };
   }, []);
+  const getKeyLabel = (key) => {
+    switch (key) {
+      case 'Vac':
+        return 'AC Voltage (RMS) (Vac)';
+      case 'Vdc':
+        return 'DC Voltage (Vdc)';
+      case 'Iac':
+        return 'AC Current (RMS) (Iac)';
+      case 'Idc':
+        return 'DC Current (Idc)';
+      case 'Wdc':
+        return 'DC Power (Wdc)';
+      case 'Wac':
+        return 'DC Accumulated Net Energy (Wh-dc)';
+      case 'Netdc':
+        return 'DC Accumulated Import Energy (Wh-dc)';
+      case 'Imdc':
+        return 'DC Accumulated Export Energy (Wh-dc)';
+      case 'Expdc':
+        return 'AC Real Power (Wac)';
+      case 'Appac':
+        return 'AC Apparent Power (VAac)';
+      case 'Factac':
+        return 'Power Factor (Pf)';
+      case 'Netac':
+        return 'AC Accumulated Net Energy (Wh-ac)';
+      case 'Imac':
+        return 'AC Accumulated Import Energy (Wh-ac)';
+      case 'Expac':
+        return 'AC Accumulated Export Energy (Wh-ac)';
+      case 'Fac':
+        return 'Frequency (Hz)';
+      default:
+        return key; // If the key doesn't match any case, return the key itself
+    }
+  };
+  
 
   return (
     <div className="App">
@@ -105,7 +142,7 @@ const About = () => {
         <tbody>
           {Object.entries(data).map(([key, value]) => (
             <tr key={key}>
-              <td>{key}</td>
+            <td>{getKeyLabel(key)}</td>
               <td>
                 <span id={`final${key}`}>{value}</span>
               </td>
