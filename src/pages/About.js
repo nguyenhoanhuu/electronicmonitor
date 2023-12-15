@@ -70,20 +70,20 @@ const About = () => {
 
     // Đăng ký lắng nghe dữ liệu từ Firebase
     subscribeToFirebase('AC Voltage (RMS) (Vac)');
-    subscribeToFirebase('Vdc');
-    subscribeToFirebase('Iac');
-    subscribeToFirebase('Idc');
-    subscribeToFirebase('Wdc');
-    subscribeToFirebase('Wac');
-    subscribeToFirebase('Netdc');
-    subscribeToFirebase('Imdc');
-    subscribeToFirebase('Expdc');
-    subscribeToFirebase('Appac');
-    subscribeToFirebase('Factac');
-    subscribeToFirebase('Netac');
-    subscribeToFirebase('Imac');
-    subscribeToFirebase('Expac');
-    subscribeToFirebase('Fac');
+    subscribeToFirebase('DC Voltage (Vdc)');
+    subscribeToFirebase('AC Current (RMS) (Iac)');
+    subscribeToFirebase('DC Current (Idc)');
+    subscribeToFirebase('DC Power (Wdc)');
+    subscribeToFirebase('DC Accumulated Net Energy (Wh-dc)');
+    subscribeToFirebase('DC Accumulated Import Energy (Wh-dc)');
+    subscribeToFirebase('DC Accumulated Export Energy (Wh-dc)');
+    subscribeToFirebase('AC Real Power (Wac)');
+    subscribeToFirebase('AC Apparent Power (VAac)');
+    subscribeToFirebase('Power Factor (Pf)');
+    subscribeToFirebase('AC Accumulated Net Energy (Wh-ac)');
+    subscribeToFirebase('AC Accumulated Import Energy (Wh-ac)');
+    subscribeToFirebase('AC Accumulated Export Energy (Wh-ac)');
+    subscribeToFirebase('Frequency (Hz)');
 
     return () => {
       // Hủy đăng ký lắng nghe khi component unmount
