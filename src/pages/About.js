@@ -5,7 +5,7 @@ import '../pages/About.css'
 
 const About = () => {
   const [data, setData] = useState({
-    Vac: '00.00',
+    "AC Voltage (RMS) (Vac)": '00.00',
     Vdc: '00.00',
     Iac: '00.00',
     Idc: '00.00',
@@ -23,7 +23,8 @@ const About = () => {
   });
 
   useEffect(() => {
-    const firebaseConfig = {
+    if (!firebase.apps.length) {
+      const firebaseConfig = {
       apiKey: "AIzaSyDD7gx6O7OcVsMIUjGGhmPFTwq01yOurDE",
       authDomain: "giamsatdiennang-d7210.firebaseapp.com",
       databaseURL: "https://giamsatdiennang-d7210-default-rtdb.firebaseio.com",
@@ -33,8 +34,8 @@ const About = () => {
       appId: "1:183117916306:web:fcf3f901e58515ade35e4b",
       measurementId: "G-9Q933YM3S5"
     };
-
     firebase.initializeApp(firebaseConfig);
+  }
 
     const database = firebase.database();
 
@@ -68,7 +69,7 @@ const About = () => {
     };
 
     // Đăng ký lắng nghe dữ liệu từ Firebase
-    subscribeToFirebase('Vac');
+    subscribeToFirebase('AC Voltage (RMS) (Vac)');
     subscribeToFirebase('Vdc');
     subscribeToFirebase('Iac');
     subscribeToFirebase('Idc');

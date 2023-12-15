@@ -7,7 +7,7 @@ function Home() {
   const [error, setError] = useState("");
 
   const validCredentials = {
-    1: "1",
+    admin: "admin",
     user1: "password1",
     user2: "password2",
   };
@@ -51,7 +51,6 @@ function Home() {
         </form>
         {error && <p style={{ color: "red" }}>{error}</p>}
       </div>
-      <Link to="/about">GO TO THE ABOUT PAGE</Link>
     </div>
   );
 }
