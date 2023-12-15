@@ -69,7 +69,7 @@ const About = () => {
     };
 
     // Đăng ký lắng nghe dữ liệu từ Firebase
-    subscribeToFirebase('AC Voltage (RMS) (Vac)');
+    subscribeToFirebase('Vac');
     subscribeToFirebase('Vdc');
     subscribeToFirebase('Iac');
     subscribeToFirebase('Idc');
