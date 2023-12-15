@@ -5,7 +5,7 @@ import '../pages/About.css'
 
 const About = () => {
   const [data, setData] = useState({
-    "AC Voltage (RMS) (Vac)": '00.00',
+    Vac: '00.00',
     Vdc: '00.00',
     Iac: '00.00',
     Idc: '00.00',
@@ -69,7 +69,7 @@ const About = () => {
     };
 
     // Đăng ký lắng nghe dữ liệu từ Firebase
-    subscribeToFirebase('Vac');
+    subscribeToFirebase('AC Voltage (RMS) (Vac)');
     subscribeToFirebase('Vdc');
     subscribeToFirebase('Iac');
     subscribeToFirebase('Idc');
