@@ -1,12 +1,15 @@
 import React, { useState } from "react";
 import '../pages/Login.css'
+
 function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
   const validCredentials = {
+    thuan: "admin",
     admin: "admin",
+    kiet: "admin",
     user1: "password1",
     user2: "password2",
   };
@@ -24,8 +27,8 @@ function Login() {
   };
 
   return (
-    <div>
-      <h1>MÔ HÌNH GIÁM SÁT ĐIỆN NĂNG</h1>
+    <div className="full-screen-background">
+      <h1 className="main-title">MÔ HÌNH GIÁM SÁT ĐIỆN NĂNG</h1>
       <div className="login-container">
         <h2>Đăng nhập</h2>
         <form onSubmit={handleLogin}>
@@ -51,6 +54,7 @@ function Login() {
       </div>
     </div>
   );
+  
 }
 
 export default Login;

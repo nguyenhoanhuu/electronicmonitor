@@ -129,8 +129,10 @@ const About = () => {
   
 
   return (
-    <div className="App">
-      <table>
+    <div>
+    <h1></h1>
+    <h1></h1>
+      <table  className='id-table'>
         <thead>
           <tr>
             <th>Thông số</th>
@@ -142,7 +144,7 @@ const About = () => {
         <tbody>
           {Object.entries(data).map(([key, value]) => (
             <tr key={key}>
-            <td>{getKeyLabel(key)}</td>
+              <td>{getKeyLabel(key)}</td>
               <td>
                 <span id={`final${key}`}>{value}</span>
               </td>
@@ -158,6 +160,6 @@ const About = () => {
       </table>
     </div>
   );
-};
+  };
 
 export default About;

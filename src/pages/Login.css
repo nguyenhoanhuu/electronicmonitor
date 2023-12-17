@@ -6,6 +6,19 @@
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
+  .full-screen-background {
+    background-image: url('./diennang.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Thêm các kiểu CSS khác theo nhu cầu của bạn */
+  
   
   .login-container h2 {
     text-align: center;
@@ -24,8 +37,12 @@
     color: #fff;
     border: none;
   }
-  body {
-    background-image: url("diennang.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
+  .main-title {
+  text-align: center;
+  color: #333;
+  padding-top:70px ;
+}
+body{
+  margin: -20px;
+  padding: 0px;
+}
