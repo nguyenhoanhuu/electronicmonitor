@@ -10,15 +10,9 @@ const About = () => {
     Iac: '00.00',
     Idc: '00.00',
     Wdc: '00.00',
-    Wac: '00.00',
-    Netdc: '00.00',
-    Imdc: '00.00',
     Expdc: '00.00',
     Appac: '00.00',
     Factac: '00.00',
-    Netac: '00.00',
-    Imac: '00.00',
-    Expac: '00.00',
     Fac: '00.00',
   });
 
@@ -74,15 +68,9 @@ const About = () => {
     subscribeToFirebase('Iac');
     subscribeToFirebase('Idc');
     subscribeToFirebase('Wdc');
-    subscribeToFirebase('Wac');
-    subscribeToFirebase('Netdc');
-    subscribeToFirebase('Imdc');
     subscribeToFirebase('Expdc');
     subscribeToFirebase('Appac');
     subscribeToFirebase('Factac');
-    subscribeToFirebase('Netac');
-    subscribeToFirebase('Imac');
-    subscribeToFirebase('Expac');
     subscribeToFirebase('Fac');
 
     return () => {
@@ -102,24 +90,12 @@ const About = () => {
         return 'DC Current (Idc)';
       case 'Wdc':
         return 'DC Power (Wdc)';
-      case 'Wac':
-        return 'DC Accumulated Net Energy (Wh-dc)';
-      case 'Netdc':
-        return 'DC Accumulated Import Energy (Wh-dc)';
-      case 'Imdc':
-        return 'DC Accumulated Export Energy (Wh-dc)';
       case 'Expdc':
         return 'AC Real Power (Wac)';
       case 'Appac':
         return 'AC Apparent Power (VAac)';
       case 'Factac':
         return 'Power Factor (Pf)';
-      case 'Netac':
-        return 'AC Accumulated Net Energy (Wh-ac)';
-      case 'Imac':
-        return 'AC Accumulated Import Energy (Wh-ac)';
-      case 'Expac':
-        return 'AC Accumulated Export Energy (Wh-ac)';
       case 'Fac':
         return 'Frequency (Hz)';
       default:
